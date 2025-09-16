@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:renote/screens/note_editor_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -44,6 +45,13 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const NoteEditorScreen()),
+        ),
+        child: Icon(Icons.add),
       ),
     );
   }
