@@ -1,7 +1,7 @@
 name: renote
 description: "A new Flutter project."
 publish_to: 'none'
-version: 0.1.0
+version: 2.0.0
 
 environment:
   sdk: ^3.9.0
@@ -14,11 +14,17 @@ dependencies:
     sdk: flutter
   flutter_quill: ^11.4.2
   google_fonts: ^6.3.1
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  path_provider: ^2.1.1
+  provider: ^6.0.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  hive_generator: ^2.0.0
+  build_runner: ^2.4.0
 
 flutter:
   uses-material-design: true
