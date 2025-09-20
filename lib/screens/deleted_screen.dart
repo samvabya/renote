@@ -1,10 +1,7 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_quill/flutter_quill.dart';
 import 'package:provider/provider.dart';
+import 'package:renote/components/note_card.dart';
 import 'package:renote/providers/note_provider.dart';
-import 'package:renote/screens/note_editor_screen.dart';
 
 class DeletedScreen extends StatelessWidget {
   const DeletedScreen({super.key});
@@ -24,7 +21,7 @@ class DeletedScreen extends StatelessWidget {
                 padding: EdgeInsetsGeometry.all(10),
                 sliver: noteProvider.notesDeleted.isEmpty
                     ? SliverFillRemaining(
-                        child: Center(child: Text('You don\'t have any notes')),
+                        child: Center(child: Text('Bin is empty')),
                       )
                     : SliverList.builder(
                         itemCount: noteProvider.notesDeleted.length,
@@ -33,26 +30,43 @@ class DeletedScreen extends StatelessWidget {
 
                           return Padding(
                             padding: const EdgeInsets.only(bottom: 10),
-                            child: ListTile(
-                              onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      NoteEditorScreen(note: note),
-                                ),
-                              ),
-                              title: Text(note.title),
-                              subtitle: Text(
-                                (Document.fromJson(
-                                  jsonDecode(note.content),
-                                )).toPlainText(),
-                              ),
-                              tileColor: Theme.of(
-                                context,
-                              ).colorScheme.secondaryContainer,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
+                            child: NoteCard(
+                              note: note,
+                              onLongPressStart: (details) {
+                                final offset = details.globalPosition;
+                                showMenu(
+                                  context: context,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadiusGeometry.circular(
+                                      20,
+                                    ),
+                                  ),
+                                  position: RelativeRect.fromLTRB(
+                                    offset.dx,
+                                    offset.dy,
+                                    MediaQuery.of(context).size.width -
+                                        offset.dx,
+                                    MediaQuery.of(context).size.height -
+                                        offset.dy,
+                                  ),
+                                  items: [
+                                    PopupMenuItem(
+                                      onTap: () => noteProvider
+                                          .deleteNotePermanent(note.id),
+                                      value: 'delete',
+                                      child: Text('Delete permanently'),
+                                    ),
+                                    PopupMenuItem(
+                                      onTap: () => noteProvider.deleteNote(
+                                        note.id,
+                                        false,
+                                      ),
+                                      value: 'restore',
+                                      child: Text('Restore'),
+                                    ),
+                                  ],
+                                );
+                              },
                             ),
                           );
                         },

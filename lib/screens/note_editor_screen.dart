@@ -40,8 +40,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
             jsonEncode(_noteController.document.toDelta().toJson()),
             isPinned,
             isArchive,
-          )
-          .then((value) => showSnack('Note Updated', context));
+          );
     }
     Provider.of<NoteProvider>(context, listen: false).loadNotes();
   }
