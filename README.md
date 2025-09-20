@@ -7,12 +7,13 @@
 ---
 
 <p align="center">
-  <img src="./screenshots/Screenshot_2025-09-17-21-28-38-17_9ce258438bb83d15e57adb017bbf35bc.jpg" width="30%" />
-  <img src="./screenshots/Screenshot_2025-09-17-21-26-29-06_9ce258438bb83d15e57adb017bbf35bc.jpg" width="30%" />
+  <img src="./screenshots/Screenshot_2025-09-20-13-23-55-79_9ce258438bb83d15e57adb017bbf35bc.jpg" width="30%" />
+  <img src="./screenshots/Screenshot_2025-09-20-13-29-39-24_9ce258438bb83d15e57adb017bbf35bc.jpg" width="30%" />
+  <img src="./screenshots/Screenshot_2025-09-20-13-38-51-18_9ce258438bb83d15e57adb017bbf35bc.jpg" width="30%" />
 </p>
 <p align="center">
-  <img src="./screenshots/Screenshot_2025-09-17-21-27-23-49_9ce258438bb83d15e57adb017bbf35bc.jpg" width="30%" />
-  <img src="./screenshots/Screenshot_2025-09-17-21-32-24-55_9ce258438bb83d15e57adb017bbf35bc.jpg" width="30%" />
+  <img src="./screenshots/Screenshot_2025-09-20-13-40-02-07_9ce258438bb83d15e57adb017bbf35bc.jpg" width="30%" />
+  <img src="./screenshots/Screenshot_2025-09-20-13-39-52-51_9ce258438bb83d15e57adb017bbf35bc.jpg" width="30%" />
 </p>
 
 ## Features
