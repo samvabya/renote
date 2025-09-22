@@ -1,7 +1,7 @@
 name: renote
 description: "A new Flutter project."
 publish_to: 'none'
-version: 2.0.0
+version: 2.1.0
 
 environment:
   sdk: ^3.9.0
@@ -12,12 +12,14 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  flutter_native_splash: ^2.4.6
   flutter_quill: ^11.4.2
   google_fonts: ^6.3.1
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   path_provider: ^2.1.1
   provider: ^6.0.5
+  url_launcher: ^6.3.2
 
 dev_dependencies:
   flutter_test:
@@ -31,3 +33,12 @@ flutter:
 
   assets:
     - assets/
+
+flutter_native_splash:
+  color: "#f0c131"
+  image: assets/icon.png
+  android_12: 
+    image: assets/icon.png
+  android: true
+  ios: false
+  web: false
