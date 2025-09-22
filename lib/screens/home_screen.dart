@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:renote/providers/note_provider.dart';
@@ -7,6 +6,7 @@ import 'package:renote/screens/deleted_screen.dart';
 import 'package:renote/screens/note_editor_screen.dart';
 import 'package:renote/screens/discover_screen.dart';
 import 'package:renote/screens/notes_screen.dart';
+import 'package:renote/screens/settings_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -22,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     DiscoverScreen(),
     ArchieveScreen(),
     DeletedScreen(),
+    SettingsScreen(),
   ];
 
   @override
@@ -66,6 +67,11 @@ class _HomeScreenState extends State<HomeScreen> {
             NavigationDrawerDestination(
               icon: Icon(Icons.delete_outline),
               label: Text('Deleted'),
+            ),
+            Divider(),
+            NavigationDrawerDestination(
+              icon: Icon(Icons.settings_outlined),
+              label: Text('Settings'),
             ),
           ],
         ),
